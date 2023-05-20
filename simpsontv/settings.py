@@ -88,7 +88,10 @@ WSGI_APPLICATION = 'simpsontv.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': dj_database_url.config(
+        default='postgresql://localhost@localhost/postgresql',
+        conn_max_age=600
+    )
 }
 
 
